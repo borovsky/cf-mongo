@@ -1,0 +1,19 @@
+defaults: &defaults
+  host: 127.0.0.1
+  port: 27017
+
+development:
+  <<: *defaults
+  database: cf_rails_mongo_app_dev
+
+test:
+  <<: *defaults
+  database: cf_rails_mongo_app_test
+
+# set these environment variables on your prod server
+production:
+<% mongo = JSON.parse( ENV['VCAP_SERVICES'] )['mongodb'].first['credentials'] %>
+  hosts: <%= mongo['hosts'] %>
+  database:  <%= mongo['database'] %>
+  username: <%= mongo['username'] %>
+  password: <%= mongo['password'] %>
