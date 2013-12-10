@@ -1,8 +1,0 @@
----
-applications:
-- name: cf-test
-  memory: 256M
-  instances: 1
-  host: cf-test
-  domain: cloudfoundry.altoros.com
-  path: .
