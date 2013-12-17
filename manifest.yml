@@ -1,0 +1,14 @@
+---
+applications:
+- name: cf-rails-mongodb
+  memory: 256M
+  instances: 1
+  host: cf-rails-mongodb
+  domain: cloudfoundry.altoros.com
+  path: .
+  services:
+    mongodb-serv:
+      label: mongodb
+      provider: 
+      version: 
+      plan: full
